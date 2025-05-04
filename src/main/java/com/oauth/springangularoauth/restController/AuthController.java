@@ -45,7 +45,7 @@ public class AuthController {
     private GoogleIdToken.Payload verifyToken(String idTokenString) throws Exception {
         GoogleIdTokenVerifier verifier = new GoogleIdTokenVerifier
                 .Builder(new NetHttpTransport(), new JacksonFactory())
-                .setAudience(Collections.singletonList("96934569111-4gg4q9mkhei39id5bvm830b6e5esq6pg.apps.googleusercontent.com")) // 👈 Replace with your client ID
+                .setAudience(Collections.singletonList("client-id.apps.googleusercontent.com")) // 👈 Replace with your client ID
                 .build();
 
         GoogleIdToken idToken = verifier.verify(idTokenString);
